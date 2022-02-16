@@ -267,7 +267,7 @@ class ListCommand(Command):
         tasks = self.db.get_tasks()
         if len(tasks) > 0:
             print()
-            print(" id      run?    started              Duration  message")
+            print(" id      run?    started              Hrs Mins  message")
             print("-------------------------------------------------------")
             for rowid, text, status, started_at, stopped_at in tasks:
                 if stopped_at:
@@ -280,10 +280,12 @@ class ListCommand(Command):
                     mode = 'NO'
                 # running: show the elapsed time so far as hours, mins
                 duration = (end_time - started_at).total_seconds()
+                h = int(duration // 3600 % 24)
+                m = int(duration % 3600 // 60)
                 elapsed = datetime.fromtimestamp(duration)
-                delta = datetime.strftime(elapsed, "%H:%M")
+                delta = datetime.strftime(elapsed, "%M:%S")
                 start = datetime.strftime(started_at, "%Y/%m/%d %H:%M:%S")
-                print(f"({rowid:4})   {mode:^4}    {start:16}  {delta:5}     {text}")
+                print(f"({rowid:4})   {mode:^4}    {start:16}  {h:2} {m:2}     {text}")
         else:
             print("No tasks to display at this time, use 'start'!")
         print()
