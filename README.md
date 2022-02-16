@@ -66,29 +66,30 @@ better way of task management...meh etc.
 
 Here would be a typical use sequence:
 
-    (env) {21:34}~/Documents/code/python/chronotrak:main ✗ ➭
-    (env) {21:34}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py create Do this first
+    (env) {21:51}~/Documents/code/python/chronotrak:main ✗ ➭ rm chronotrak.db
+    (env) {21:51}~/Documents/code/python/chronotrak:main ✗ ➭
+    (env) {21:51}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py create Do this first
     Created! ID is 1
-    (env) {21:34}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py create No, no, do that first
+    (env) {21:51}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py create No, no, do that first
     Created! ID is 2
-    (env) {21:34}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py create Friday, break out the beer
-    s
+    (env) {21:52}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py create Friday, break out the beer
     Created! ID is 3
-    (env) {21:35}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py list
+    (env) {21:52}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py list
 
-     id      run?    started              Duration  message
+     id      run?    started              Hrs Mins  message
     -------------------------------------------------------
-    (   1)   YES     2022/02/16 21:34:43  01:00     Do this first
-    (   2)   YES     2022/02/16 21:34:50  01:00     No, no, do that first
-    (   3)   YES     2022/02/16 21:35:00  01:00     Friday, break out the beers
+    (   1)   YES     2022/02/16 21:51:55   0  0     Do this first
+    (   2)   YES     2022/02/16 21:52:05   0  0     No, no, do that first
+    (   3)   YES     2022/02/16 21:52:12   0  0     Friday, break out the beer
 
-    (env) {21:35}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py update 3 Friday, break out the beers AND cakes
+    (env) {21:52}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py update 3 Friday, break out the beers AND cakes
     Entry updated OK
-    (env) {21:35}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py list
+    (env) {21:52}~/Documents/code/python/chronotrak:main ✗ ➭ ./chronotrak.py list
 
-     id      run?    started              Duration  message
+     id      run?    started              Hrs Mins  message
     -------------------------------------------------------
-    (   1)   YES     2022/02/16 21:34:43  01:00     Do this first
-    (   2)   YES     2022/02/16 21:34:50  01:00     No, no, do that first
-    (   3)   YES     2022/02/16 21:35:00  01:00     Friday, break out the beers AND cakes
+    (   1)   YES     2022/02/16 21:51:55   0  0     Do this first
+    (   2)   YES     2022/02/16 21:52:05   0  0     No, no, do that first
+    (   3)   YES     2022/02/16 21:52:12   0  0     Friday, break out the beers AND cakes
+
 
