@@ -1,4 +1,6 @@
 import os
+
+from contextlib import suppress
 from datetime import datetime
 
 from unittest import TestCase
@@ -33,7 +35,7 @@ class TestDatabaseWrapper(TestCase):
     def setUp(self):
         DB.DB_NAME = TEST_DB
         # remove test database, forces new database every test
-        if os.path.isfile(TEST_DB):
+        with suppress(OSError):
             os.remove(TEST_DB)
         self.db = DB()
 
